@@ -1,12 +1,20 @@
 <p align="center">🚧 This project is still under early development and <strong>not</strong> ready for production use. 🚧</p>
 
+<p align="center">
+<a href="https://packagist.org/packages/jdpowered/geofox-gti-client"><img src="https://poser.pugx.org/jdpowered/geofox-gti-client/v/stable?format=flat-square" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/jdpowered/geofox-gti-client"><img src="https://poser.pugx.org/jdpowered/geofox-gti-client/v/unstable?format=flat-square" alt="Latest Unstable Version"></a>
+<a href="https://travis-ci.org/JonasDoebertin/php-geofox-gti-client"><img src="https://travis-ci.org/JonasDoebertin/php-geofox-gti-client.svg?branch=master" alt="Build Status"></a>
+<a href="https://styleci.io/repos/123781940"><img src="https://styleci.io/repos/123781940/shield?branch=master" alt="StyleCI"></a>
+<a href="https://packagist.org/packages/jdpowered/geofox-gti-client"><img src="https://poser.pugx.org/jdpowered/geofox-gti-client/license?format=flat-square" alt="License"></a>
+</p>
+
 # Geofox GTI Client
 
 PHP wrapper for the Geofox Thin Interface (GTI) serving public transportation data for Hamburg.
 
 ## Todo
 
-This project is still under early development and not ready for production use.
+This project is still under early development and not ready for production use. Only
 
 ### API Methods
 
