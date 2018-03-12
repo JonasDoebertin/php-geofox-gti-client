@@ -21,7 +21,7 @@ class SdName
     protected $type;
 
     /**
-     * @var $string|null
+     * @var string|null
      */
     protected $name;
 
