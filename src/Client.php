@@ -85,8 +85,7 @@ class Client
         string $password,
         bool $useTestApi = false,
         string $platform = Platform::WEB
-    )
-    {
+    ) {
         $this->applicationId = $applicationId;
         $this->password = $password;
         $this->useTestApi = $useTestApi;
@@ -107,8 +106,8 @@ class Client
      * Execute an api request.
      *
      * @param \JdPowered\Geofox\Request\Base $request
-     * @return \JdPowered\Geofox\Response\Base
      * @throws \JdPowered\Geofox\Exception\InvalidJsonException
+     * @return \JdPowered\Geofox\Response\Base
      */
     public function fetch(BaseRequest $request): BaseResponse
     {
@@ -129,7 +128,7 @@ class Client
      */
     protected function client(): Guzzle
     {
-        if (!$this->httpClient) {
+        if (! $this->httpClient) {
             $stack = new HandlerStack();
             $stack->setHandler(\GuzzleHttp\choose_handler());
             $stack->push(Middleware::mapRequest(function (RequestInterface $request) {

@@ -51,7 +51,7 @@ class JourneySdName extends SdName
      * @param \JdPowered\Geofox\Json $arrTime
      * @return JourneySdName
      */
-    public function setArrTime(Json $arrTime): JourneySdName
+    public function setArrTime(Json $arrTime): self
     {
         $this->arrTime = $arrTime;
 
@@ -64,7 +64,7 @@ class JourneySdName extends SdName
      * @param \JdPowered\Geofox\Json $depTime
      * @return JourneySdName
      */
-    public function setDepTime(Json $depTime): JourneySdName
+    public function setDepTime(Json $depTime): self
     {
         $this->depTime = new GtiTime($depTime);
 
@@ -90,7 +90,7 @@ class JourneySdName extends SdName
      * @param string $plattform
      * @return JourneySdName
      */
-    public function setPlattform(string $plattform): JourneySdName
+    public function setPlattform(string $plattform): self
     {
         $this->plattform = $plattform;
 

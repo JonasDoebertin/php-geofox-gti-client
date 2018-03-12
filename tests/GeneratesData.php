@@ -7,8 +7,8 @@ use JdPowered\Geofox\Json;
 trait GeneratesData
 {
     /**
-     * @return \JdPowered\Geofox\Json
      * @throws \JdPowered\Geofox\Exception\InvalidJsonException
+     * @return \JdPowered\Geofox\Json
      */
     protected function getCoordinateData(): Json
     {
@@ -19,8 +19,8 @@ trait GeneratesData
     }
 
     /**
-     * @return \JdPowered\Geofox\Json
      * @throws \JdPowered\Geofox\Exception\InvalidJsonException
+     * @return \JdPowered\Geofox\Json
      */
     protected function getGtiTimeData(): Json
     {
@@ -31,8 +31,8 @@ trait GeneratesData
     }
 
     /**
-     * @return \JdPowered\Geofox\Json
      * @throws \JdPowered\Geofox\Exception\InvalidJsonException
+     * @return \JdPowered\Geofox\Json
      */
     protected function getSdNameData(): Json
     {

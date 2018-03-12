@@ -2,8 +2,6 @@
 
 namespace JdPowered\Geofox\Request;
 
-use JdPowered\Geofox\Enum\CoordinateType;
-use JdPowered\Geofox\Enum\ModificationType;
 use JdPowered\Geofox\Enum\Set;
 use JdPowered\Geofox\Objects\GtiTime;
 use JdPowered\Geofox\Objects\SdName;
@@ -76,7 +74,7 @@ class DepartureList extends Base
      * @param \JdPowered\Geofox\Objects\SdName $station
      * @return \JdPowered\Geofox\Request\DepartureList
      */
-    public function setStation(SdName $station): DepartureList
+    public function setStation(SdName $station): self
     {
         $this->station = $station;
 
@@ -99,7 +97,7 @@ class DepartureList extends Base
      * @param \JdPowered\Geofox\Objects\SdName[] $stations
      * @return \JdPowered\Geofox\Request\DepartureList
      */
-    public function setStations(array $stations): DepartureList
+    public function setStations(array $stations): self
     {
         $this->stations = $stations;
 
@@ -122,7 +120,7 @@ class DepartureList extends Base
      * @param \JdPowered\Geofox\Objects\GtiTime $time
      * @return \JdPowered\Geofox\Request\DepartureList
      */
-    public function setTime(GtiTime $time): DepartureList
+    public function setTime(GtiTime $time): self
     {
         $this->time = $time;
 
@@ -145,7 +143,7 @@ class DepartureList extends Base
      * @param int|null $maxList
      * @return \JdPowered\Geofox\Request\DepartureList
      */
-    public function setMaxList(?int $maxList): DepartureList
+    public function setMaxList(?int $maxList): self
     {
         $this->maxList = $maxList;
 
@@ -168,7 +166,7 @@ class DepartureList extends Base
      * @param int|null $maxTimeOffset
      * @return \JdPowered\Geofox\Request\DepartureList
      */
-    public function setMaxTimeOffset(?int $maxTimeOffset): DepartureList
+    public function setMaxTimeOffset(?int $maxTimeOffset): self
     {
         $this->maxTimeOffset = $maxTimeOffset;
 
@@ -191,7 +189,7 @@ class DepartureList extends Base
      * @param bool $allStationsInChangingNode
      * @return \JdPowered\Geofox\Request\DepartureList
      */
-    public function setAllStationsInChangingNode(bool $allStationsInChangingNode): DepartureList
+    public function setAllStationsInChangingNode(bool $allStationsInChangingNode): self
     {
         $this->allStationsInChangingNode = $allStationsInChangingNode;
 
@@ -214,7 +212,7 @@ class DepartureList extends Base
      * @param bool $returnFilters
      * @return \JdPowered\Geofox\Request\DepartureList
      */
-    public function setReturnFilters(bool $returnFilters): DepartureList
+    public function setReturnFilters(bool $returnFilters): self
     {
         $this->returnFilters = $returnFilters;
 
@@ -233,7 +231,7 @@ class DepartureList extends Base
      * @param \JdPowered\Geofox\Objects\FilterEntry[] $filter
      * @return DepartureList
      */
-    public function setFilter(array $filter): DepartureList
+    public function setFilter(array $filter): self
     {
         $this->filter = $filter;
 
@@ -256,7 +254,7 @@ class DepartureList extends Base
      * @param \JdPowered\Geofox\Objects\ServiceType[] $serviceTypes
      * @return \JdPowered\Geofox\Request\DepartureList
      */
-    public function setServiceTypes(array $serviceTypes): DepartureList
+    public function setServiceTypes(array $serviceTypes): self
     {
         $this->serviceTypes = $serviceTypes;
 
@@ -279,7 +277,7 @@ class DepartureList extends Base
      * @param bool $useRealtime
      * @return \JdPowered\Geofox\Request\DepartureList
      */
-    public function setUseRealtime(bool $useRealtime): DepartureList
+    public function setUseRealtime(bool $useRealtime): self
     {
         $this->useRealtime = $useRealtime;
 

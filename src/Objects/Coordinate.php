@@ -64,7 +64,7 @@ class Coordinate implements Arrayable
      * @param float $lat
      * @return Coordinate
      */
-    public function setLat(float $lat): Coordinate
+    public function setLat(float $lat): self
     {
         $this->lat = $lat;
 
@@ -87,7 +87,7 @@ class Coordinate implements Arrayable
      * @param float $lng
      * @return Coordinate
      */
-    public function setLng(float $lng): Coordinate
+    public function setLng(float $lng): self
     {
         $this->lng = $lng;
 

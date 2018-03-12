@@ -70,7 +70,7 @@ abstract class Base
      * @param int $version
      * @return \JdPowered\Geofox\Request\Base
      */
-    public function setVersion(int $version): Base
+    public function setVersion(int $version): self
     {
         $this->version = $version;
 
@@ -93,7 +93,7 @@ abstract class Base
      * @param string $language
      * @return \JdPowered\Geofox\Request\Base
      */
-    public function setLanguage(string $language): Base
+    public function setLanguage(string $language): self
     {
         $this->language = Language::get($language);
 
@@ -103,8 +103,8 @@ abstract class Base
     /**
      * Execute the request.
      *
-     * @return \JdPowered\Geofox\Response\Base
      * @throws \JdPowered\Geofox\Exception\InvalidJsonException
+     * @return \JdPowered\Geofox\Response\Base
      */
     public function get()
     {

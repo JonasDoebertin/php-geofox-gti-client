@@ -65,7 +65,7 @@ class SdName
      * @param string|null $id
      * @return \JdPowered\Geofox\Objects\SdName
      */
-    public function setId(?string $id): SdName
+    public function setId(?string $id): self
     {
         $this->id = $id;
 
@@ -88,7 +88,7 @@ class SdName
      * @param string $type
      * @return \JdPowered\Geofox\Objects\SdName
      */
-    public function setType(?string $type): SdName
+    public function setType(?string $type): self
     {
         $this->type = is_null($type) ? null : SdType::get($type);
 
@@ -134,7 +134,7 @@ class SdName
      * @param string|null $city
      * @return \JdPowered\Geofox\Objects\SdName
      */
-    public function setCity(?string $city): SdName
+    public function setCity(?string $city): self
     {
         $this->city = $city;
 
@@ -157,7 +157,7 @@ class SdName
      * @param string|null $combinedName
      * @return \JdPowered\Geofox\Objects\SdName
      */
-    public function setCombinedName(?string $combinedName): SdName
+    public function setCombinedName(?string $combinedName): self
     {
         $this->combinedName = $combinedName;
 
@@ -180,7 +180,7 @@ class SdName
      * @param \JdPowered\Geofox\Json $coordinate
      * @return \JdPowered\Geofox\Objects\SdName
      */
-    public function setCoordinate(Json $coordinate = null): SdName
+    public function setCoordinate(Json $coordinate = null): self
     {
         $this->coordinate = new Coordinate($coordinate);
 

@@ -6,5 +6,4 @@ use MabeEnum\EnumSet;
 
 class Set extends EnumSet
 {
-
 }

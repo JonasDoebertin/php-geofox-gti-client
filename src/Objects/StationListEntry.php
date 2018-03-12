@@ -53,7 +53,7 @@ class StationListEntry extends SdName
      * @param array $shortcuts
      * @return StationListEntry
      */
-    public function setShortcuts(array $shortcuts): StationListEntry
+    public function setShortcuts(array $shortcuts): self
     {
         $this->shortcuts = $shortcuts;
 
@@ -76,7 +76,7 @@ class StationListEntry extends SdName
      * @param array $aliasses
      * @return StationListEntry
      */
-    public function setAliasses(array $aliasses): StationListEntry
+    public function setAliasses(array $aliasses): self
     {
         $this->aliasses = $aliasses;
 
@@ -99,7 +99,7 @@ class StationListEntry extends SdName
      * @param array $vehicleTypes
      * @return StationListEntry
      */
-    public function setVehicleTypes(array $vehicleTypes): StationListEntry
+    public function setVehicleTypes(array $vehicleTypes): self
     {
         $this->vehicleTypes = new Set(VehicleType::class);
 
@@ -126,7 +126,7 @@ class StationListEntry extends SdName
      * @param bool $exists
      * @return StationListEntry
      */
-    public function setExists(bool $exists): StationListEntry
+    public function setExists(bool $exists): self
     {
         $this->exists = $exists;
 

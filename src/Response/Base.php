@@ -57,7 +57,7 @@ class Base
      * @param int $status
      * @return \JdPowered\Geofox\Response\Base
      */
-    protected function setStatus(int $status): Base
+    protected function setStatus(int $status): self
     {
         $this->status = $status;
 
@@ -80,7 +80,7 @@ class Base
      * @param string $returnCode
      * @return \JdPowered\Geofox\Response\Base
      */
-    protected function setReturnCode(string $returnCode): Base
+    protected function setReturnCode(string $returnCode): self
     {
         $this->returnCode = ReturnCode::get($returnCode);
 
@@ -92,7 +92,7 @@ class Base
      *
      * @return null|string
      */
-    public function getErrorText(): ? string
+    public function getErrorText(): ?string
     {
         return $this->errorText;
     }
@@ -103,7 +103,7 @@ class Base
      * @param string|null $errorText
      * @return \JdPowered\Geofox\Response\Base
      */
-    protected function setErrorText(string $errorText = null): Base
+    protected function setErrorText(string $errorText = null): self
     {
         $this->errorText = $errorText;
 
@@ -115,7 +115,7 @@ class Base
      *
      * @return null|string
      */
-    public function getErrorDevInfo(): ? string
+    public function getErrorDevInfo(): ?string
     {
         return $this->errorDevInfo;
     }
@@ -126,7 +126,7 @@ class Base
      * @param string|null $errorDevInfo
      * @return \JdPowered\Geofox\Response\Base
      */
-    protected function setErrorDevInfo(string $errorDevInfo = null): Base
+    protected function setErrorDevInfo(string $errorDevInfo = null): self
     {
         $this->errorDevInfo = $errorDevInfo;
 

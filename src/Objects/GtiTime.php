@@ -61,7 +61,7 @@ class GtiTime implements Arrayable
      * @param string $date
      * @return GtiTime
      */
-    public function setDate(string $date): GtiTime
+    public function setDate(string $date): self
     {
         $this->date = $date;
 
@@ -84,7 +84,7 @@ class GtiTime implements Arrayable
      * @param string $time
      * @return GtiTime
      */
-    public function setTime(string $time): GtiTime
+    public function setTime(string $time): self
     {
         $this->time = $time;
 
