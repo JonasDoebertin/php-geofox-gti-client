@@ -39,7 +39,7 @@ class RegionalSdName extends SdName
      * @param int $distance
      * @return RegionalSdName
      */
-    public function setDistance(int $distance): RegionalSdName
+    public function setDistance(int $distance): self
     {
         $this->distance = $distance;
 
@@ -52,7 +52,7 @@ class RegionalSdName extends SdName
      * @param int $time
      * @return RegionalSdName
      */
-    public function setTime(int $time): RegionalSdName
+    public function setTime(int $time): self
     {
         $this->time = $time;
 

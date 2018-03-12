@@ -62,7 +62,7 @@ class Init extends Base
      *
      * @return null|string
      */
-    public function getId(): ? string
+    public function getId(): ?string
     {
         return $this->id;
     }
@@ -73,7 +73,7 @@ class Init extends Base
      * @param string|null $id
      * @return \JdPowered\Geofox\Response\Init
      */
-    protected function setId(string $id = null): ? Init
+    protected function setId(string $id = null): ?self
     {
         $this->id = $id;
 
@@ -85,7 +85,7 @@ class Init extends Base
      *
      * @return null|string
      */
-    public function getDataId(): ? string
+    public function getDataId(): ?string
     {
         return $this->dataId;
     }
@@ -96,7 +96,7 @@ class Init extends Base
      * @param string $dataId
      * @return \JdPowered\Geofox\Response\Init
      */
-    protected function setDataId(string $dataId = null): Init
+    protected function setDataId(string $dataId = null): self
     {
         $this->dataId = $dataId;
 
@@ -119,7 +119,7 @@ class Init extends Base
      * @param string $beginOfService
      * @return \JdPowered\Geofox\Response\Init
      */
-    protected function setBeginOfService(string $beginOfService): Init
+    protected function setBeginOfService(string $beginOfService): self
     {
         $this->beginOfService = Chronos::createFromFormat(
             'd.m.Y',
@@ -145,7 +145,7 @@ class Init extends Base
      * @param string $endOfService
      * @return \JdPowered\Geofox\Response\Init
      */
-    protected function setEndOfService(string $endOfService): Init
+    protected function setEndOfService(string $endOfService): self
     {
         $this->endOfService = Chronos::createFromFormat(
             'd.m.Y',
@@ -173,7 +173,7 @@ class Init extends Base
      * @param string $buildTime
      * @return \JdPowered\Geofox\Response\Init
      */
-    protected function setBuildDateTime(string $buildDate, string $buildTime): Init
+    protected function setBuildDateTime(string $buildDate, string $buildTime): self
     {
         $this->buildDateTime = Chronos::createFromFormat(
             'd.m.Y H:i:s',
@@ -200,7 +200,7 @@ class Init extends Base
      * @param string $buildText
      * @return \JdPowered\Geofox\Response\Init
      */
-    protected function setBuildText(string $buildText): Init
+    protected function setBuildText(string $buildText): self
     {
         $this->buildText = $buildText;
 

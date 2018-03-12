@@ -1,8 +1,6 @@
 <?php
 
-
 namespace JdPowered\Geofox\Objects;
-
 
 use JdPowered\Geofox\Json;
 use JdPowered\Geofox\Traits\MagicGettersSetters;
@@ -64,7 +62,7 @@ class FilterEntry
      * @param null|string $serviceId
      * @return \JdPowered\Geofox\Objects\FilterEntry
      */
-    public function setServiceId(?string $serviceId): FilterEntry
+    public function setServiceId(?string $serviceId): self
     {
         $this->serviceId = $serviceId;
 
@@ -87,7 +85,7 @@ class FilterEntry
      * @param string[] $stationIds
      * @return \JdPowered\Geofox\Objects\FilterEntry
      */
-    public function setStationIds(array $stationIds): FilterEntry
+    public function setStationIds(array $stationIds): self
     {
         $this->stationIds = $stationIds;
 
@@ -108,7 +106,7 @@ class FilterEntry
      * @param null|string $serviceName
      * @return \JdPowered\Geofox\Objects\FilterEntry
      */
-    public function setServiceName(?string $serviceName): FilterEntry
+    public function setServiceName(?string $serviceName): self
     {
         $this->serviceName = $serviceName;
 
@@ -131,7 +129,7 @@ class FilterEntry
      * @param null|string $label
      * @return \JdPowered\Geofox\Objects\FilterEntry
      */
-    public function setLabel(?string $label): FilterEntry
+    public function setLabel(?string $label): self
     {
         $this->label = $label;
 

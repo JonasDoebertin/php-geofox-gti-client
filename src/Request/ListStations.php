@@ -5,7 +5,6 @@ namespace JdPowered\Geofox\Request;
 use JdPowered\Geofox\Enum\CoordinateType;
 use JdPowered\Geofox\Enum\ModificationType;
 use JdPowered\Geofox\Enum\Set;
-use JdPowered\Geofox\Traits\MagicGettersSetters;
 
 class ListStations extends Base
 {
@@ -34,7 +33,7 @@ class ListStations extends Base
      *
      * @return null|string
      */
-    public function getDataReleaseId(): ? string
+    public function getDataReleaseId(): ?string
     {
         return $this->dataReleaseId;
     }
@@ -45,7 +44,7 @@ class ListStations extends Base
      * @param string $dataReleaseId
      * @return \JdPowered\Geofox\Request\ListStations
      */
-    public function setDataReleaseId(string $dataReleaseId): ListStations
+    public function setDataReleaseId(string $dataReleaseId): self
     {
         $this->dataReleaseId = $dataReleaseId;
 
@@ -68,7 +67,7 @@ class ListStations extends Base
      * @param array $modificationTypes
      * @return \JdPowered\Geofox\Request\ListStations
      */
-    public function setModificationTypes(array $modificationTypes): ListStations
+    public function setModificationTypes(array $modificationTypes): self
     {
         $this->modificationTypes = new Set(ModificationType::class);
 
@@ -95,7 +94,7 @@ class ListStations extends Base
      * @param string $coordinateType
      * @return \JdPowered\Geofox\Request\ListStations
      */
-    public function setCoordinateType(string $coordinateType): ListStations
+    public function setCoordinateType(string $coordinateType): self
     {
         $this->coordinateType = CoordinateType::get($coordinateType);
 
@@ -118,7 +117,7 @@ class ListStations extends Base
      * @param bool $filterEquivalent
      * @return \JdPowered\Geofox\Request\ListStations
      */
-    public function setFilterEquivalent(bool $filterEquivalent): ListStations
+    public function setFilterEquivalent(bool $filterEquivalent): self
     {
         $this->filterEquivalent = $filterEquivalent;
 

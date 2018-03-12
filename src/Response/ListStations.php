@@ -41,7 +41,7 @@ class ListStations extends Base
      * @param array $stations
      * @return \JdPowered\Geofox\Response\ListStations
      */
-    protected function setStations(array $stations = []): ListStations
+    protected function setStations(array $stations = []): self
     {
         $this->stations = array_map(function (Json $station) {
             return new StationListEntry($station);

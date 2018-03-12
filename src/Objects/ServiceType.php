@@ -45,9 +45,9 @@ class ServiceType
      * @param string|null $simpleType
      * @return \JdPowered\Geofox\Objects\ServiceType
      */
-    public function setSimpleType(?string $simpleType): ServiceType
+    public function setSimpleType(?string $simpleType): self
     {
-        $this->simpleType = !is_null($simpleType) ? SimpleServiceType::get($simpleType) : null;
+        $this->simpleType = ! is_null($simpleType) ? SimpleServiceType::get($simpleType) : null;
 
         return $this;
     }
@@ -68,7 +68,7 @@ class ServiceType
      * @param string|null $shortInfo
      * @return \JdPowered\Geofox\Objects\ServiceType
      */
-    public function setShortInfo(?string $shortInfo): ServiceType
+    public function setShortInfo(?string $shortInfo): self
     {
         $this->shortInfo = $shortInfo;
 
@@ -91,7 +91,7 @@ class ServiceType
      * @param string|null $longInfo
      * @return \JdPowered\Geofox\Objects\ServiceType
      */
-    public function setLongInfo(?string $longInfo): ServiceType
+    public function setLongInfo(?string $longInfo): self
     {
         $this->longInfo = $longInfo;
 
@@ -114,7 +114,7 @@ class ServiceType
      * @param string|null $model
      * @return \JdPowered\Geofox\Objects\ServiceType
      */
-    public function setModel(?string $model): ServiceType
+    public function setModel(?string $model): self
     {
         $this->model = $model;
 

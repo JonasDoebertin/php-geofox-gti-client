@@ -28,10 +28,10 @@ class Json
      * Create from json string.
      *
      * @param string $json
-     * @return \JdPowered\Geofox\Objects\Json
      * @throws \JdPowered\Geofox\Exception\InvalidJsonException
+     * @return \JdPowered\Geofox\Objects\Json
      */
-    public static function createFromJson(string $json): Json
+    public static function createFromJson(string $json): self
     {
         $decoded = json_decode($json, false);
 
@@ -57,9 +57,9 @@ class Json
         }
 
         if (is_array($value)) {
-           return array_map(function ($item) {
-               return is_object($item) ? new static($item) : $item;
-           }, $value);
+            return array_map(function ($item) {
+                return is_object($item) ? new static($item) : $item;
+            }, $value);
         }
 
         return $value;
