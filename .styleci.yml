@@ -5,5 +5,22 @@ disabled:
   - length_ordered_imports
 
 enabled:
-  - concat_with_spaces
+  - align_double_arrow
   - alpha_ordered_imports
+  - compact_nullable_typehint
+  - concat_with_spaces
+  - linebreak_after_opening_tag
+  - new_with_braces
+  - no_blank_lines_after_return
+  - no_null_property_initialization
+  - no_spaces_outside_offset
+  - no_superfluous_elseif
+  - no_useless_else
+  - phpdoc_add_missing_param_annotation
+  - phpdoc_link_to_see
+  - phpdoc_no_empty_return
+  - phpdoc_order
+  - phpdoc_return_self_reference
+  - property_separation
+  - return_type_declaration
+  - ternary_to_null_coalescing
