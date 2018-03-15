@@ -134,7 +134,7 @@ class Departure
      */
     public function hasStation(): bool
     {
-        return !is_null($this->station);
+        return ! is_null($this->station);
     }
 
     /**

@@ -8,7 +8,6 @@ use JdPowered\Geofox\Enum\Set;
 use JdPowered\Geofox\Objects\Departure;
 use JdPowered\Geofox\Objects\FilterEntry;
 use JdPowered\Geofox\Objects\GtiTime;
-use JdPowered\Geofox\Objects\StationListEntry;
 
 class DepartureList extends Base
 {

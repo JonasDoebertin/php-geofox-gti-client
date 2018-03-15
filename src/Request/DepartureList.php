@@ -313,14 +313,14 @@ class DepartureList extends Base
         return array_merge(parent::httpBody(), [
 //            'station' => ,
 //            'stations' => ,
-            'time' => $this->getTime()->toArray(),
-            'maxList' => $this->getMaxList(),
-            'maxTimeOffset' => $this->getMaxTimeOffset(),
+            'time'                      => $this->getTime()->toArray(),
+            'maxList'                   => $this->getMaxList(),
+            'maxTimeOffset'             => $this->getMaxTimeOffset(),
             'allStationsInChangingNode' => $this->getAllStationsInChangingNode(),
-            'returnFilters' => $this->getReturnFilters(),
+            'returnFilters'             => $this->getReturnFilters(),
 //            'filter' => ,
             'serviceTypes' => $this->getServiceTypes()->toArray(),
-            'useRealTime' => $this->getUseRealtime(),
+            'useRealTime'  => $this->getUseRealtime(),
         ]);
     }
 

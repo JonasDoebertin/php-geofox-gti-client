@@ -2,8 +2,8 @@
 
 namespace JdPowered\Geofox\Objects;
 
-use JdPowered\Geofox\Enum\SdType;
 use JdPowered\Geofox\Data;
+use JdPowered\Geofox\Enum\SdType;
 use JdPowered\Geofox\Traits\MagicGettersSetters;
 
 class SdName
