@@ -2,7 +2,7 @@
 
 namespace JdPowered\Geofox\Objects;
 
-use JdPowered\Geofox\Json;
+use JdPowered\Geofox\Data;
 
 class RegionalSdName extends SdName
 {
@@ -19,9 +19,9 @@ class RegionalSdName extends SdName
     /**
      * Create a new instance (and optionally fill it from a JSON object).
      *
-     * @param \JdPowered\Geofox\Json $data
+     * @param \JdPowered\Geofox\Data $data
      */
-    public function __construct(Json $data = null)
+    public function __construct(Data $data = null)
     {
         parent::__construct($data);
 

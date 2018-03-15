@@ -7,9 +7,11 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use JdPowered\Geofox\Enum\Platform;
 use JdPowered\Geofox\Request\Base as BaseRequest;
+use JdPowered\Geofox\Request\DepartureList as DepartureListRequest;
 use JdPowered\Geofox\Request\Init as InitRequest;
 use JdPowered\Geofox\Request\ListStations as ListStationsRequest;
 use JdPowered\Geofox\Response\Base as BaseResponse;
+use JdPowered\Geofox\Response\DepartureList as DepartureListResponse;
 use JdPowered\Geofox\Response\Init as InitResponse;
 use JdPowered\Geofox\Response\ListStations as ListStationsResponse;
 use Psr\Http\Message\RequestInterface;
@@ -68,8 +70,9 @@ class Client
      * @var array
      */
     protected $requestResponseMap = [
-        InitRequest::class         => InitResponse::class,
-        ListStationsRequest::class => ListStationsResponse::class,
+        InitRequest::class          => InitResponse::class,
+        ListStationsRequest::class  => ListStationsResponse::class,
+        DepartureListRequest::class => DepartureListResponse::class,
     ];
 
     /**
@@ -117,7 +120,7 @@ class Client
 
         return new $this->requestResponseMap[get_class($request)](
             $result->getStatusCode(),
-            Json::createFromJson($result->getBody())
+            Data::createFromJson($result->getBody())
         );
     }
 

@@ -2,17 +2,17 @@
 
 namespace JdPowered\Geofox\Test;
 
-use JdPowered\Geofox\Json;
+use JdPowered\Geofox\Data;
 
 trait GeneratesData
 {
     /**
      * @throws \JdPowered\Geofox\Exception\InvalidJsonException
-     * @return \JdPowered\Geofox\Json
+     * @return \JdPowered\Geofox\Data
      */
-    protected function getCoordinateData(): Json
+    protected function getCoordinateData(): Data
     {
-        return Json::createFromJson('{
+        return Data::createFromJson('{
             "x": 9.93454,
             "y": 53.552405
         }');
@@ -20,11 +20,11 @@ trait GeneratesData
 
     /**
      * @throws \JdPowered\Geofox\Exception\InvalidJsonException
-     * @return \JdPowered\Geofox\Json
+     * @return \JdPowered\Geofox\Data
      */
-    protected function getGtiTimeData(): Json
+    protected function getGtiTimeData(): Data
     {
-        return Json::createFromJson('{
+        return Data::createFromJson('{
             "date": "27.03.2014",
             "time": "18:05"
         }');
@@ -32,11 +32,11 @@ trait GeneratesData
 
     /**
      * @throws \JdPowered\Geofox\Exception\InvalidJsonException
-     * @return \JdPowered\Geofox\Json
+     * @return \JdPowered\Geofox\Data
      */
-    protected function getSdNameData(): Json
+    protected function getSdNameData(): Data
     {
-        return Json::createFromJson('{
+        return Data::createFromJson('{
             "name": "Altona",
             "id": "Master:80953",
             "type": "STATION",

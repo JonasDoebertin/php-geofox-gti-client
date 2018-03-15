@@ -5,7 +5,7 @@ namespace JdPowered\Geofox;
 use JdPowered\Geofox\Exception\InvalidJsonException;
 use stdClass;
 
-class Json
+class Data
 {
     /**
      * The underlying object.
@@ -28,8 +28,8 @@ class Json
      * Create from json string.
      *
      * @param string $json
+     * @return \JdPowered\Geofox\Data
      * @throws \JdPowered\Geofox\Exception\InvalidJsonException
-     * @return \JdPowered\Geofox\Objects\Json
      */
     public static function createFromJson(string $json): self
     {

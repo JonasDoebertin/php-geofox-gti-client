@@ -3,10 +3,13 @@
 namespace JdPowered\Geofox\Objects;
 
 use JdPowered\Geofox\Contracts\Arrayable;
-use JdPowered\Geofox\Json;
+use JdPowered\Geofox\Data;
+use JdPowered\Geofox\Traits\MagicGettersSetters;
 
 class GtiTime implements Arrayable
 {
+    use MagicGettersSetters;
+
     /**
      * @var string
      */
@@ -20,9 +23,9 @@ class GtiTime implements Arrayable
     /**
      * Create a new instance (and optionally fill it from a JSON object).
      *
-     * @param \JdPowered\Geofox\Json|null $data
+     * @param \JdPowered\Geofox\Data|null $data
      */
-    public function __construct(Json $data = null)
+    public function __construct(Data $data = null)
     {
         if (is_null($data)) {
             return;

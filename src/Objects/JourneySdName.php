@@ -2,7 +2,7 @@
 
 namespace JdPowered\Geofox\Objects;
 
-use JdPowered\Geofox\Json;
+use JdPowered\Geofox\Data;
 
 class JourneySdName extends SdName
 {
@@ -29,9 +29,9 @@ class JourneySdName extends SdName
     /**
      * Create a new instance (and optionally fill it from a JSON object).
      *
-     * @param \JdPowered\Geofox\Json $data
+     * @param \JdPowered\Geofox\Data $data
      */
-    public function __construct(Json $data = null)
+    public function __construct(Data $data = null)
     {
         parent::__construct($data);
 
@@ -48,10 +48,10 @@ class JourneySdName extends SdName
     /**
      * Set the arrival time.
      *
-     * @param \JdPowered\Geofox\Json $arrTime
+     * @param \JdPowered\Geofox\Data $arrTime
      * @return JourneySdName
      */
-    public function setArrTime(Json $arrTime): self
+    public function setArrTime(Data $arrTime): self
     {
         $this->arrTime = $arrTime;
 
@@ -61,10 +61,10 @@ class JourneySdName extends SdName
     /**
      * Set the departure time.
      *
-     * @param \JdPowered\Geofox\Json $depTime
+     * @param \JdPowered\Geofox\Data $depTime
      * @return JourneySdName
      */
-    public function setDepTime(Json $depTime): self
+    public function setDepTime(Data $depTime): self
     {
         $this->depTime = new GtiTime($depTime);
 

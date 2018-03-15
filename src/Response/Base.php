@@ -3,7 +3,7 @@
 namespace JdPowered\Geofox\Response;
 
 use JdPowered\Geofox\Enum\ReturnCode;
-use JdPowered\Geofox\Json;
+use JdPowered\Geofox\Data;
 
 class Base
 {
@@ -31,9 +31,9 @@ class Base
      * Create a new instance and fill it from a JSON object.
      *
      * @param int $status
-     * @param \JdPowered\Geofox\Json $data
+     * @param \JdPowered\Geofox\Data $data
      */
-    public function __construct(int $status, Json $data)
+    public function __construct(int $status, Data $data)
     {
         $this->setStatus($status)
             ->setReturnCode($data->returnCode)

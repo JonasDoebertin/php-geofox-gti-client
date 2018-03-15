@@ -2,7 +2,7 @@
 
 namespace JdPowered\Geofox\Objects;
 
-use JdPowered\Geofox\Json;
+use JdPowered\Geofox\Data;
 use JdPowered\Geofox\Traits\MagicGettersSetters;
 
 class FilterEntry
@@ -32,9 +32,9 @@ class FilterEntry
     /**
      * Create a new instance (and optionally fill it from a JSON object).
      *
-     * @param \JdPowered\Geofox\Json $data
+     * @param \JdPowered\Geofox\Data $data
      */
-    public function __construct(Json $data = null)
+    public function __construct(Data $data = null)
     {
         if (is_null($data)) {
             return;

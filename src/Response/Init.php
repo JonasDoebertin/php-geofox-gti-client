@@ -5,7 +5,7 @@ namespace JdPowered\Geofox\Response;
 use Cake\Chronos\Chronos;
 use Cake\Chronos\Date;
 use JdPowered\Geofox\Client;
-use JdPowered\Geofox\Json;
+use JdPowered\Geofox\Data;
 
 class Init extends Base
 {
@@ -43,9 +43,9 @@ class Init extends Base
      * Create a new instance and fill it from a JSON object.
      *
      * @param int $statusCode
-     * @param \JdPowered\Geofox\Json $data
+     * @param \JdPowered\Geofox\Data $data
      */
-    public function __construct(int $statusCode, Json $data)
+    public function __construct(int $statusCode, Data $data)
     {
         parent::__construct($statusCode, $data);
 

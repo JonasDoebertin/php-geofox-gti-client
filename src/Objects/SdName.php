@@ -3,7 +3,7 @@
 namespace JdPowered\Geofox\Objects;
 
 use JdPowered\Geofox\Enum\SdType;
-use JdPowered\Geofox\Json;
+use JdPowered\Geofox\Data;
 use JdPowered\Geofox\Traits\MagicGettersSetters;
 
 class SdName
@@ -43,9 +43,9 @@ class SdName
     /**
      * Create a new instance (and optionally fill it from a JSON object).
      *
-     * @param \JdPowered\Geofox\Json|null $data
+     * @param \JdPowered\Geofox\Data|null $data
      */
-    public function __construct(?Json $data = null)
+    public function __construct(?Data $data = null)
     {
         if (is_null($data)) {
             return;
@@ -56,7 +56,7 @@ class SdName
             ->setName($data->name)
             ->setCity($data->city)
             ->setCombinedName($data->combinedName)
-            ->setCoordinate($data->coordinate);
+            ->setCoordinate(new Coordinate($data->coordinate));
     }
 
     /**
@@ -177,12 +177,12 @@ class SdName
     /**
      * Set coordinates.
      *
-     * @param \JdPowered\Geofox\Json $coordinate
+     * @param \JdPowered\Geofox\Objects\Coordinate $coordinate
      * @return \JdPowered\Geofox\Objects\SdName
      */
-    public function setCoordinate(Json $coordinate = null): self
+    public function setCoordinate(Coordinate $coordinate): self
     {
-        $this->coordinate = new Coordinate($coordinate);
+        $this->coordinate = $coordinate;
 
         return $this;
     }

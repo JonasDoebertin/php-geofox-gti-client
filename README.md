@@ -62,13 +62,13 @@ This project is still under early development and not ready for production use. 
 
 - [ ] AnnouncementFilterPlannedType
 - [ ] AnnouncementReason
-- [ ] AttributeType
+- [x] AttributeType
 - [ ] ButtonType
 - [x] CoordinateType
 - [ ] ElevatorState
 - [ ] ExtraFareType
 - [x] FilterType
-- [ ] FilterServiceType
+- [x] FilterServiceType
 - [x] Language
 - [ ] LineModificationType
 - [ ] LocationType
@@ -86,9 +86,10 @@ This project is still under early development and not ready for production use. 
 ## Objects
 
 - [ ] Announcement
-- [ ] Attribute
+- [x] Attribute
 - [ ] ContSearchByServiceId
 - [x] Coordinate
+- [x] Departure
 - [x] FilterEntry
 - [x] GtiTime
 - [x] JourneySdName
@@ -98,7 +99,7 @@ This project is still under early development and not ready for production use. 
 - [ ] Schedule
 - [ ] ScheduleElement
 - [x] SdName
-- [ ] Service
+- [x] Service
 - [x] ServiceType
 - [x] StationListEntry
 - [ ] TariffDetails

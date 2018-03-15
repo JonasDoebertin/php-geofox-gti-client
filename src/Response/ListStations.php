@@ -2,7 +2,7 @@
 
 namespace JdPowered\Geofox\Response;
 
-use JdPowered\Geofox\Json;
+use JdPowered\Geofox\Data;
 use JdPowered\Geofox\Objects\StationListEntry;
 
 class ListStations extends Base
@@ -16,9 +16,9 @@ class ListStations extends Base
      * Create a new instance and fill it from a JSON object.
      *
      * @param int $statusCode
-     * @param \JdPowered\Geofox\Json $data
+     * @param \JdPowered\Geofox\Data $data
      */
-    public function __construct(int $statusCode, Json $data)
+    public function __construct(int $statusCode, Data $data)
     {
         parent::__construct($statusCode, $data);
 
@@ -43,7 +43,7 @@ class ListStations extends Base
      */
     protected function setStations(array $stations = []): self
     {
-        $this->stations = array_map(function (Json $station) {
+        $this->stations = array_map(function (Data $station) {
             return new StationListEntry($station);
         }, $stations);
 

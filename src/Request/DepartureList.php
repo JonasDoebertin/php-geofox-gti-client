@@ -2,6 +2,7 @@
 
 namespace JdPowered\Geofox\Request;
 
+use JdPowered\Geofox\Enum\FilterServiceType;
 use JdPowered\Geofox\Enum\Set;
 use JdPowered\Geofox\Objects\GtiTime;
 use JdPowered\Geofox\Objects\SdName;
@@ -49,7 +50,7 @@ class DepartureList extends Base
     protected $filter;
 
     /**
-     * @var \JdPowered\Geofox\Objects\ServiceType[]
+     * @var \JdPowered\Geofox\Enum\Set
      */
     protected $serviceTypes;
 
@@ -241,11 +242,11 @@ class DepartureList extends Base
     /**
      * Get service types.
      *
-     * @return \JdPowered\Geofox\Objects\ServiceType[]
+     * @return \JdPowered\Geofox\Enum\Set
      */
-    public function getServiceTypes(): array
+    public function getServiceTypes(): Set
     {
-        return $this->serviceTypes ?? [];
+        return $this->serviceTypes ?? new Set(FilterServiceType::class);
     }
 
     /**
@@ -256,7 +257,11 @@ class DepartureList extends Base
      */
     public function setServiceTypes(array $serviceTypes): self
     {
-        $this->serviceTypes = $serviceTypes;
+        $this->serviceTypes = new Set(FilterServiceType::class);
+
+        foreach ($serviceTypes as $serviceType) {
+            $this->serviceTypes->attach(FilterServiceType::get($serviceType));
+        }
 
         return $this;
     }
@@ -294,6 +299,7 @@ class DepartureList extends Base
         $this->setTime(new GtiTime());
         $this->allStationsInChangingNode = false;
         $this->returnFilters = false;
+        $this->serviceTypes = new Set(FilterServiceType::class);
         $this->useRealtime = false;
     }
 
@@ -308,13 +314,13 @@ class DepartureList extends Base
 //            'station' => ,
 //            'stations' => ,
             'time' => $this->getTime()->toArray(),
-//            'maxList' => ,
-//            'maxTimeOffset' => ,
-//            'allStationsInChangingNode' => ,
-//            'returnFilters' => ,
+            'maxList' => $this->getMaxList(),
+            'maxTimeOffset' => $this->getMaxTimeOffset(),
+            'allStationsInChangingNode' => $this->getAllStationsInChangingNode(),
+            'returnFilters' => $this->getReturnFilters(),
 //            'filter' => ,
-//            'serviceTypes' => $this->getServiceTypes(),
-//            'useRealTime' => $this->getUseRealtime(),
+            'serviceTypes' => $this->getServiceTypes()->toArray(),
+            'useRealTime' => $this->getUseRealtime(),
         ]);
     }
 

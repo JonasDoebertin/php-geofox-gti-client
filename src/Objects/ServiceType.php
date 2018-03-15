@@ -2,6 +2,7 @@
 
 namespace JdPowered\Geofox\Objects;
 
+use JdPowered\Geofox\Data;
 use JdPowered\Geofox\Enum\SimpleServiceType;
 use JdPowered\Geofox\Traits\MagicGettersSetters;
 
@@ -28,6 +29,38 @@ class ServiceType
      * @var string|null
      */
     protected $model;
+
+    /**
+     * Create a new instance (and optionally fill it from a JSON object).
+     *
+     * @param \JdPowered\Geofox\Data $data
+     */
+    public function __construct(Data $data = null)
+    {
+        if (is_null($data)) {
+            return;
+        }
+
+        $this->setSimpleType($data->simpleType)
+            ->setShortInfo($data->shortInfo)
+            ->setLongInfo($data->longInfo)
+            ->setModel($data->model);
+    }
+
+    /**
+     * Get the instance as an array.
+     *
+     * @return array
+     */
+    public function toArray(): array
+    {
+        return [
+            'simpleType' => $this->getSimpleType(),
+            'shortInfo' => $this->getShortInfo(),
+            'longInfo' => $this->getLongInfo(),
+            'model' => $this->getModel(),
+        ];
+    }
 
     /**
      * Get simple type.
