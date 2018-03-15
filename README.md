@@ -29,7 +29,7 @@ This project is still under early development and not ready for production use. 
   - [ ] Response
 - [ ] **departureList**
   - [x] Request
-  - [ ] Response
+  - [x] Response
 - [ ] **getTariff**
   - [ ] Request
   - [ ] Response

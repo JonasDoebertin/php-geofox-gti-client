@@ -5,6 +5,8 @@ namespace JdPowered\Geofox\Response;
 use JdPowered\Geofox\Data;
 use JdPowered\Geofox\Enum\FilterServiceType;
 use JdPowered\Geofox\Enum\Set;
+use JdPowered\Geofox\Objects\Departure;
+use JdPowered\Geofox\Objects\FilterEntry;
 use JdPowered\Geofox\Objects\GtiTime;
 use JdPowered\Geofox\Objects\StationListEntry;
 
@@ -82,7 +84,9 @@ class DepartureList extends Base
      */
     protected function setDepartures(?array $departures): self
     {
-        $this->departures = $departures ?? [];
+        $this->departures = array_map(function (Data $departure) {
+            return new Departure($departure);
+        }, $departures);
 
         return $this;
     }
@@ -100,12 +104,14 @@ class DepartureList extends Base
     /**
      * Set filter.
      *
-     * @param \JdPowered\Geofox\Objects\FilterEntry[]|null $filter
+     * @param \JdPowered\Geofox\Objects\FilterEntry[]|null $filters
      * @return \JdPowered\Geofox\Response\DepartureList
      */
-    protected function setFilter(?array $filter): self
+    protected function setFilter(?array $filters): self
     {
-        $this->filter = $filter ?? [];
+        $this->filter = array_map(function (Data $filter) {
+            return new FilterEntry($filter);
+        }, $filters);
 
         return $this;
     }
