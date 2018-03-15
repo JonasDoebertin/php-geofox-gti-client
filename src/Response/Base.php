@@ -2,8 +2,8 @@
 
 namespace JdPowered\Geofox\Response;
 
-use JdPowered\Geofox\Enum\ReturnCode;
 use JdPowered\Geofox\Data;
+use JdPowered\Geofox\Enum\ReturnCode;
 
 class Base
 {

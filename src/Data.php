@@ -28,8 +28,8 @@ class Data
      * Create from json string.
      *
      * @param string $json
-     * @return \JdPowered\Geofox\Data
      * @throws \JdPowered\Geofox\Exception\InvalidJsonException
+     * @return \JdPowered\Geofox\Data
      */
     public static function createFromJson(string $json): self
     {

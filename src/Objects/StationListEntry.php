@@ -2,9 +2,9 @@
 
 namespace JdPowered\Geofox\Objects;
 
+use JdPowered\Geofox\Data;
 use JdPowered\Geofox\Enum\Set;
 use JdPowered\Geofox\Enum\VehicleType;
-use JdPowered\Geofox\Data;
 
 class StationListEntry extends SdName
 {

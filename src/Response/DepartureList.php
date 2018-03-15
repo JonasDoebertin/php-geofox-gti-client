@@ -6,7 +6,6 @@ use JdPowered\Geofox\Data;
 use JdPowered\Geofox\Enum\FilterServiceType;
 use JdPowered\Geofox\Enum\Set;
 use JdPowered\Geofox\Objects\GtiTime;
-use JdPowered\Geofox\Objects\StationListEntry;
 
 class DepartureList extends Base
 {
