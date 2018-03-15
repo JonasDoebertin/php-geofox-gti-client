@@ -60,27 +60,26 @@ This project is still under early development and not ready for production use. 
 
 ### Enums
 
-- [ ] AnnouncementFilterPlannedType
+- [x] AnnouncementFilterPlannedType
 - [ ] AnnouncementReason
 - [x] AttributeType
-- [ ] ButtonType
+- [x] ButtonType
 - [x] CoordinateType
-- [ ] ElevatorState
-- [ ] ExtraFareType
+- [x] ElevatorState
+- [x] ExtraFareType
 - [x] FilterType
 - [x] FilterServiceType
 - [x] Language
-- [ ] LineModificationType
+- [x] LineModificationType
 - [ ] LocationType
 - [x] ModificationType
 - [x] Platform
-- [ ] RealtimeType
-- [ ] RegionType
+- [x] RealtimeType
 - [x] ReturnCode
 - [x] SdType
-- [ ] SegmentSelector
+- [x] SegmentSelector
 - [x] SimpleServiceType
-- [ ] TariffRegionType
+- [x] TariffRegionType
 - [x] VehicleType
 
 ## Objects
