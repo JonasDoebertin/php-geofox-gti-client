@@ -2,10 +2,8 @@
 
 namespace JdPowered\Geofox\Objects;
 
-use JdPowered\Geofox\Enum\AttributeType;
-use JdPowered\Geofox\Enum\Set;
-use JdPowered\Geofox\Enum\SimpleServiceType;
 use JdPowered\Geofox\Data;
+use JdPowered\Geofox\Enum\Set;
 use JdPowered\Geofox\Traits\MagicGettersSetters;
 
 class Service
@@ -57,10 +55,10 @@ class Service
     public function toArray(): array
     {
         return [
-            'id' => $this->getId(),
-            'name' => $this->getName(),
+            'id'        => $this->getId(),
+            'name'      => $this->getName(),
             'direction' => $this->getDirection(),
-            'type' => $this->getType()->toArray(),
+            'type'      => $this->getType()->toArray(),
         ];
     }
 

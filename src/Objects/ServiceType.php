@@ -56,9 +56,9 @@ class ServiceType
     {
         return [
             'simpleType' => $this->getSimpleType(),
-            'shortInfo' => $this->getShortInfo(),
-            'longInfo' => $this->getLongInfo(),
-            'model' => $this->getModel(),
+            'shortInfo'  => $this->getShortInfo(),
+            'longInfo'   => $this->getLongInfo(),
+            'model'      => $this->getModel(),
         ];
     }
 

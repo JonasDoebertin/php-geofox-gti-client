@@ -2,10 +2,9 @@
 
 namespace JdPowered\Geofox\Objects;
 
+use JdPowered\Geofox\Data;
 use JdPowered\Geofox\Enum\AttributeType;
 use JdPowered\Geofox\Enum\Set;
-use JdPowered\Geofox\Enum\SimpleServiceType;
-use JdPowered\Geofox\Data;
 use JdPowered\Geofox\Traits\MagicGettersSetters;
 
 class Attribute
