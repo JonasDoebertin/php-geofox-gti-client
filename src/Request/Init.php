@@ -11,6 +11,6 @@ class Init extends Base
      */
     protected function uri(): string
     {
-        return 'init';
+        return '/gti/public/init';
     }
 }

@@ -30,19 +30,9 @@ class Client
     const API_TIMEZONE = 'Europe/Berlin';
 
     /**
-     * The production api base uri.
-     */
-    const API_HOST_PRODUCTION = 'https://api.geofox.de/gti/public/';
-
-    /**
-     * The test api base uri.
-     */
-    const API_HOST_TEST = 'https://api-test.geofox.de/gti/public/';
-
-    /**
      * @var string
      */
-    protected $applicationId;
+    protected $username;
 
     /**
      * @var string
@@ -50,9 +40,9 @@ class Client
     protected $password;
 
     /**
-     * @var bool
+     * @var string
      */
-    protected $useTestApi;
+    protected $host;
 
     /**
      * @var \JdPowered\Geofox\Enum\Platform
@@ -78,20 +68,20 @@ class Client
     /**
      * Client constructor.
      *
-     * @param string $applicationId
+     * @param string $username
      * @param string $password
-     * @param bool $useTestApi
+     * @param string $host
      * @param string $platform
      */
     public function __construct(
-        string $applicationId,
+        string $username,
         string $password,
-        bool $useTestApi = false,
+        string $host,
         string $platform = Platform::WEB
     ) {
-        $this->applicationId = $applicationId;
+        $this->username = $username;
         $this->password = $password;
-        $this->useTestApi = $useTestApi;
+        $this->host = $host;
         $this->platform = Platform::get($platform);
     }
 
@@ -114,9 +104,7 @@ class Client
      */
     public function fetch(BaseRequest $request): BaseResponse
     {
-        $client = $this->client();
-
-        $result = $client->send($request->httpRequest(), $this->requestOptions());
+        $result = $this->client()->send($request->httpRequest(), $this->requestOptions());
 
         return new $this->requestResponseMap[get_class($request)](
             $result->getStatusCode(),
@@ -137,13 +125,13 @@ class Client
             $stack->push(Middleware::mapRequest(function (RequestInterface $request) {
                 return $request->withHeader(
                     'geofox-auth-signature',
-                    $this->generateRequestSignature($request->getBody())
+                    $this->generateRequestSignature($request)
                 );
             }));
 
             $this->httpClient = new Guzzle([
                 'handler'  => $stack,
-                'base_uri' => $this->useTestApi ? self::API_HOST_TEST : self::API_HOST_PRODUCTION,
+                'base_uri' => $this->host,
             ]);
         }
 
@@ -184,7 +172,7 @@ class Client
             'Content-Type'     => 'application/json',
             'Accept-Encoding'  => 'gzip, deflate',
             'Accept'           => 'application/json',
-            'geofox-auth-user' => $this->applicationId,
+            'geofox-auth-user' => $this->username,
             'geofox-auth-type' => 'HmacSHA1',
             'X-Platform'       => $this->platform->getValue(),
             'X-TraceId'        => Uuid::uuid4(),

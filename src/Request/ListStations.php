@@ -146,10 +146,10 @@ class ListStations extends Base
     protected function httpBody(): array
     {
         return array_merge(parent::httpBody(), [
-            'dataReleaseId'      => $this->getDataReleaseId(),
-            'modificationsTypes' => $this->getModificationTypes()->getValues(),
-            'coordinateType'     => $this->getCoordinateType(),
-            'filterEquivalent'   => $this->getFilterEquivalent(),
+            'dataReleaseID'     => $this->getDataReleaseId(),
+            'modificationTypes' => $this->getModificationTypes()->getValues(),
+            'coordinateType'    => $this->getCoordinateType()->getValue(),
+            'filterEquivalent'  => $this->getFilterEquivalent(),
         ]);
     }
 
@@ -160,6 +160,6 @@ class ListStations extends Base
      */
     protected function uri(): string
     {
-        return 'listStations';
+        return '/gti/public/listStations';
     }
 }

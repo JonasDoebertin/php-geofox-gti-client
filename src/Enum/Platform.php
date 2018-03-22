@@ -6,9 +6,9 @@ use MabeEnum\Enum;
 
 class Platform extends Enum
 {
-    const IOS = 'ios';
-    const ANDROID = 'android';
-    const WINPHONE = 'winphone';
-    const WEB = 'web';
-    const MOBILE = 'mobile';
+    const IOS = 'IOS';
+    const ANDROID = 'ANDROID';
+    const WINPHONE = 'WINPHONE';
+    const WEB = 'WEB';
+    const MOBILE = 'MOBILE';
 }

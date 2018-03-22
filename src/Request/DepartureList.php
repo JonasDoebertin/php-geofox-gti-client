@@ -331,6 +331,6 @@ class DepartureList extends Base
      */
     protected function uri(): string
     {
-        return 'departureList';
+        return '/gti/public/departureList';
     }
 }

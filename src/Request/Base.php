@@ -118,7 +118,7 @@ abstract class Base
      */
     public function httpRequest(): GuzzleRequest
     {
-        return new GuzzleRequest('POST', $this->uri(), [], $this->httpBody());
+        return new GuzzleRequest('POST', $this->uri(), [], json_encode($this->httpBody()));
     }
 
     /**
@@ -129,7 +129,7 @@ abstract class Base
     protected function httpBody(): array
     {
         return [
-            'language' => $this->language,
+            'language' => $this->language->getValue(),
             'version'  => $this->version,
         ];
     }

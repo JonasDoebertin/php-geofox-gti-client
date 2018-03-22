@@ -8,6 +8,11 @@ use JdPowered\Geofox\Objects\StationListEntry;
 class ListStations extends Base
 {
     /**
+     * @var string
+     */
+    protected $dataReleaseId;
+
+    /**
      * @var \JdPowered\Geofox\Objects\StationListEntry[]
      */
     protected $stations;
@@ -22,7 +27,31 @@ class ListStations extends Base
     {
         parent::__construct($statusCode, $data);
 
-        $this->setStations($data->stations);
+        $this->setDataReleaseId($data->dataReleaseID)
+            ->setStations($data->stations);
+    }
+
+    /**
+     * Get data release id.
+     *
+     * @return string
+     */
+    public function getDataReleaseId(): string
+    {
+        return $this->dataReleaseId;
+    }
+
+    /**
+     * Set data release id.
+     *
+     * @param string $dataReleaseId
+     * @return \JdPowered\Geofox\Response\ListStations
+     */
+    protected function setDataReleaseId(string $dataReleaseId): self
+    {
+        $this->dataReleaseId = $dataReleaseId;
+
+        return $this;
     }
 
     /**
@@ -38,14 +67,14 @@ class ListStations extends Base
     /**
      * Set stations.
      *
-     * @param array $stations
+     * @param array|null $stations
      * @return \JdPowered\Geofox\Response\ListStations
      */
-    protected function setStations(array $stations = []): self
+    protected function setStations(?array $stations): self
     {
         $this->stations = array_map(function (Data $station) {
             return new StationListEntry($station);
-        }, $stations);
+        }, $stations ?? []);
 
         return $this;
     }
