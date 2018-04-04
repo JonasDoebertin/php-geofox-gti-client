@@ -86,6 +86,16 @@ class Client
     }
 
     /**
+     * Create an init request.
+     *
+     * @return \JdPowered\Geofox\Request\Init
+     */
+    public function init()
+    {
+        return new InitRequest($this);
+    }
+
+    /**
      * Create a listStations request.
      *
      * @return \JdPowered\Geofox\Request\ListStations

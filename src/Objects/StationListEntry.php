@@ -130,7 +130,7 @@ class StationListEntry extends SdName
      */
     public function setExists(?bool $exists = true): self
     {
-        $this->exists = $exists;
+        $this->exists = $exists ?? true;
 
         return $this;
     }
