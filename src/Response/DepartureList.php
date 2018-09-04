@@ -41,7 +41,11 @@ class DepartureList extends Base
     {
         parent::__construct($statusCode, $data);
 
-//        $this->setStations($data->stations);
+        $this
+            ->setTime(new GtiTime($data->time))
+            ->setDepartures($data->departures)
+            ->setFilter($data->filter)
+            ->setServiceTypes($data->serviceTypes);
     }
 
     /**
@@ -110,7 +114,7 @@ class DepartureList extends Base
     {
         $this->filter = array_map(function (Data $filter) {
             return new FilterEntry($filter);
-        }, $filters);
+        }, $filters ?? []);
 
         return $this;
     }
@@ -131,11 +135,11 @@ class DepartureList extends Base
      * @param array|null $serviceTypes
      * @return \JdPowered\Geofox\Response\DepartureList
      */
-    protected function setServiceTypes(?array $serviceTypes = []): self
+    protected function setServiceTypes(?array $serviceTypes): self
     {
         $this->serviceTypes = new Set(FilterServiceType::class);
 
-        foreach ($serviceTypes as $serviceType) {
+        foreach ($serviceTypes ?? [] as $serviceType) {
             $this->serviceTypes->attach(FilterServiceType::get($serviceType));
         }
 

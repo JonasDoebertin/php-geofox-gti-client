@@ -4,6 +4,7 @@ namespace JdPowered\Geofox\Request;
 
 use JdPowered\Geofox\Enum\FilterServiceType;
 use JdPowered\Geofox\Enum\Set;
+use function JdPowered\Geofox\filterArray;
 use JdPowered\Geofox\Objects\GtiTime;
 use JdPowered\Geofox\Objects\SdName;
 
@@ -27,12 +28,12 @@ class DepartureList extends Base
     /**
      * @var int|null
      */
-    protected $maxList;
+    protected $maxList = 25;
 
     /**
      * @var int|null
      */
-    protected $maxTimeOffset;
+    protected $maxTimeOffset = 60 * 24;
 
     /**
      * @var bool
@@ -310,8 +311,8 @@ class DepartureList extends Base
      */
     protected function httpBody(): array
     {
-        return array_merge(parent::httpBody(), [
-//            'station' => ,
+        return array_merge(parent::httpBody(), filterArray([
+            'station'                   => $this->getStation()->toArray(),
 //            'stations' => ,
             'time'                      => $this->getTime()->toArray(),
             'maxList'                   => $this->getMaxList(),
@@ -319,9 +320,9 @@ class DepartureList extends Base
             'allStationsInChangingNode' => $this->getAllStationsInChangingNode(),
             'returnFilters'             => $this->getReturnFilters(),
 //            'filter' => ,
-            'serviceTypes' => $this->getServiceTypes()->toArray(),
-            'useRealTime'  => $this->getUseRealtime(),
-        ]);
+            'serviceTypes'              => $this->getServiceTypes()->toArray(),
+            'useRealtime'               => $this->getUseRealtime(),
+        ]));
     }
 
     /**

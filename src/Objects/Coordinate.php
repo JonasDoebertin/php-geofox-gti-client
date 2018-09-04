@@ -4,6 +4,7 @@ namespace JdPowered\Geofox\Objects;
 
 use JdPowered\Geofox\Contracts\Arrayable;
 use JdPowered\Geofox\Data;
+use function JdPowered\Geofox\filterArray;
 use JdPowered\Geofox\Traits\MagicGettersSetters;
 
 class Coordinate implements Arrayable
@@ -11,14 +12,14 @@ class Coordinate implements Arrayable
     use MagicGettersSetters;
 
     /**
-     * @var float
+     * @var float|null
      */
-    protected $lng = 0;
+    protected $lng;
 
     /**
-     * @var float
+     * @var float|null
      */
-    protected $lat = 0;
+    protected $lat;
 
     /**
      * Create a new instance (and optionally fill it from a JSON object).
@@ -42,18 +43,18 @@ class Coordinate implements Arrayable
      */
     public function toArray(): array
     {
-        return [
-            'lat' => $this->getLat(),
-            'lng' => $this->getLng(),
-        ];
+        return filterArray([
+            'y' => $this->getLat(),
+            'x' => $this->getLng(),
+        ]);
     }
 
     /**
      * Get latitude.
      *
-     * @return float
+     * @return float|null
      */
-    public function getLat(): float
+    public function getLat(): ?float
     {
         return $this->lat;
     }
@@ -74,9 +75,9 @@ class Coordinate implements Arrayable
     /**
      * Get longitude.
      *
-     * @return float
+     * @return float|null
      */
-    public function getLng(): float
+    public function getLng(): ?float
     {
         return $this->lng;
     }

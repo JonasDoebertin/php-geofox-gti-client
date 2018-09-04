@@ -2,11 +2,13 @@
 
 namespace JdPowered\Geofox\Objects;
 
+use JdPowered\Geofox\Contracts\Arrayable;
 use JdPowered\Geofox\Data;
 use JdPowered\Geofox\Enum\SdType;
+use function JdPowered\Geofox\filterArray;
 use JdPowered\Geofox\Traits\MagicGettersSetters;
 
-class SdName
+class SdName implements Arrayable
 {
     use MagicGettersSetters;
 
@@ -36,7 +38,7 @@ class SdName
     protected $combinedName;
 
     /**
-     * @var \JdPowered\Geofox\Objects\Coordinate
+     * @var \JdPowered\Geofox\Objects\Coordinate|null
      */
     protected $coordinate;
 
@@ -60,6 +62,44 @@ class SdName
     }
 
     /**
+     * Create a new instance from only an id.
+     *
+     * @param string $id
+     * @return \JdPowered\Geofox\Objects\SdName
+     */
+    public static function createFromId(string $id): self
+    {
+        return (new static())->setId($id)->setType(SdType::STATION);
+    }
+
+    /**
+     * Get the instance as an array.
+     *
+     * @return array
+     */
+    public function toArray(): array
+    {
+        return filterArray([
+            'id'           => $this->getId(),
+            'type'         => (string) $this->getType(),
+            'name'         => $this->getName(),
+            'city'         => $this->getCity(),
+            'combinedName' => $this->getCombinedName(),
+            'coordinate'   => $this->getCoordinate()->toArray(),
+        ]);
+    }
+
+    /**
+     * Get id.
+     *
+     * @return string|null
+     */
+    public function getId(): ?string
+    {
+        return $this->id;
+    }
+
+    /**
      * Set id.
      *
      * @param string|null $id
@@ -73,13 +113,13 @@ class SdName
     }
 
     /**
-     * Get id.
+     * Get type.
      *
-     * @return string|null
+     * @return \JdPowered\Geofox\Enum\SdType|null
      */
-    public function getId(): ?string
+    public function getType(): ?SdType
     {
-        return $this->id;
+        return $this->type;
     }
 
     /**
@@ -96,13 +136,13 @@ class SdName
     }
 
     /**
-     * Get type.
+     * Get name.
      *
-     * @return \JdPowered\Geofox\Enum\SdType|null
+     * @return string|null
      */
-    public function getType(): ?SdType
+    public function getName(): ?string
     {
-        return $this->type;
+        return $this->name;
     }
 
     /**
@@ -119,13 +159,13 @@ class SdName
     }
 
     /**
-     * Get name.
+     * Get city.
      *
      * @return string|null
      */
-    public function getName(): ?string
+    public function getCity(): ?string
     {
-        return $this->name;
+        return $this->city;
     }
 
     /**
@@ -142,13 +182,13 @@ class SdName
     }
 
     /**
-     * Get city.
+     * Get combined name.
      *
      * @return string|null
      */
-    public function getCity(): ?string
+    public function getCombinedName(): ?string
     {
-        return $this->city;
+        return $this->combinedName;
     }
 
     /**
@@ -165,13 +205,13 @@ class SdName
     }
 
     /**
-     * Get combined name.
+     * Get coordinates.
      *
-     * @return string|null
+     * @return \JdPowered\Geofox\Objects\Coordinate
      */
-    public function getCombinedName(): ?string
+    public function getCoordinate(): Coordinate
     {
-        return $this->combinedName;
+        return $this->coordinate ?? new Coordinate();
     }
 
     /**
@@ -185,15 +225,5 @@ class SdName
         $this->coordinate = $coordinate;
 
         return $this;
-    }
-
-    /**
-     * Get coordinates.
-     *
-     * @return \JdPowered\Geofox\Objects\Coordinate
-     */
-    public function getCoordinate(): Coordinate
-    {
-        return $this->coordinate ?? new Coordinate();
     }
 }

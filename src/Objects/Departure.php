@@ -70,7 +70,17 @@ class Departure
             return;
         }
 
-        // TODO: Set data
+        $this
+            ->setLine(new Service($data->line))
+            ->setTimeOffset($data->timeOffset)
+            ->setStation(new SdName($data->station))
+            ->setServiceId($data->serviceId)
+            ->setPlatform($data->platform)
+            ->setDelay($data->delay)
+            ->setExtra($data->extra ?? false)
+            ->setCancelled($data->cancelled ?? false)
+            ->setRealtimePlatform($data->realtimePlatform)
+            ->setAttributes($data->attributes);
     }
 
     /**
@@ -290,22 +300,25 @@ class Departure
 
     /**
      * Get attributes.
-     * @return \JdPowered\Geofox\Objects\Attribute
+     *
+     * @return array
      */
-    public function getAttributes(): Attribute
+    public function getAttributes(): array
     {
-        return $this->attributes ?? new Attribute();
+        return $this->attributes ?? [];
     }
 
     /**
      * Set attributes.
      *
-     * @param \JdPowered\Geofox\Objects\Attribute $attributes
+     * @param array|null $attributes
      * @return \JdPowered\Geofox\Objects\Departure
      */
-    public function setAttributes(Attribute $attributes): self
+    public function setAttributes(?array $attributes): self
     {
-        $this->attributes = $attributes;
+        $this->attributes = array_map(function (Data $attribute) {
+            return new Attribute($attribute);
+        }, $attributes ?? []);
 
         return $this;
     }

@@ -6,6 +6,7 @@ use MabeEnum\Enum;
 
 class AttributeType extends Enum
 {
+    const ACCURATE = 'ACCURATE';
     const ANNOUNCEMENT = 'ANNOUNCEMENT';
     const DIRECTION_NAME = 'DIRECTION_NAME';
     const DISPOSITIVE_ACTION = 'DISPOSITIVE_ACTION';

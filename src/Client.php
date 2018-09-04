@@ -100,9 +100,19 @@ class Client
      *
      * @return \JdPowered\Geofox\Request\ListStations
      */
-    public function listStations()
+    public function listStations(): ListStationsRequest
     {
         return new ListStationsRequest($this);
+    }
+
+    /**
+     * Create a listStations request.
+     *
+     * @return \JdPowered\Geofox\Request\DepartureList
+     */
+    public function departureList(): DepartureListRequest
+    {
+        return new DepartureListRequest($this);
     }
 
     /**
