@@ -2,6 +2,7 @@
 
 namespace JdPowered\Geofox\Response;
 
+use JdPowered\Geofox\Contracts\Arrayable;
 use JdPowered\Geofox\Data;
 use JdPowered\Geofox\Enum\FilterServiceType;
 use JdPowered\Geofox\Enum\Set;
@@ -9,7 +10,7 @@ use JdPowered\Geofox\Objects\Departure;
 use JdPowered\Geofox\Objects\FilterEntry;
 use JdPowered\Geofox\Objects\GtiTime;
 
-class DepartureList extends Base
+class DepartureList extends Base implements Arrayable
 {
     /**
      * @var \JdPowered\Geofox\Objects\GtiTime
@@ -46,6 +47,21 @@ class DepartureList extends Base
             ->setDepartures($data->departures)
             ->setFilter($data->filter)
             ->setServiceTypes($data->serviceTypes);
+    }
+
+    /**
+     * Get the instance as an array.
+     *
+     * @return array
+     */
+    public function toArray(): array
+    {
+        return array_merge(parent::toArray(), [
+            'time'         => $this->getTime()->toArray(),
+            'departures'   => array_map(function (Departure $departure) { return $departure->toArray(); }, $this->getDepartures()),
+            'filter'       => array_map(function (FilterEntry $filter) { return $filter->toArray(); }, $this->getFilter()),
+            'serviceTypes' => $this->getServiceTypes()->toArray(),
+        ]);
     }
 
     /**

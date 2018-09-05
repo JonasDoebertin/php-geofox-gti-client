@@ -42,6 +42,21 @@ class Base
     }
 
     /**
+     * Get the instance as an array.
+     *
+     * @return array
+     */
+    public function toArray(): array
+    {
+        return [
+            'status'       => $this->getStatus(),
+            'returnCode'   => $this->getReturnCode()->getName(),
+            'errorText'    => $this->getErrorText(),
+            'errorDevInfo' => $this->getErrorDevInfo(),
+        ];
+    }
+
+    /**
      * Get the status code.
      *
      * @return int

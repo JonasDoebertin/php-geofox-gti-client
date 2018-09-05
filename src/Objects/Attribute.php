@@ -2,12 +2,13 @@
 
 namespace JdPowered\Geofox\Objects;
 
+use JdPowered\Geofox\Contracts\Arrayable;
 use JdPowered\Geofox\Data;
 use JdPowered\Geofox\Enum\AttributeType;
 use JdPowered\Geofox\Enum\Set;
 use JdPowered\Geofox\Traits\MagicGettersSetters;
 
-class Attribute
+class Attribute implements Arrayable
 {
     use MagicGettersSetters;
 

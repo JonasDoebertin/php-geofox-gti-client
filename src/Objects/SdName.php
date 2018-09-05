@@ -81,7 +81,7 @@ class SdName implements Arrayable
     {
         return filterArray([
             'id'           => $this->getId(),
-            'type'         => (string) $this->getType(),
+            'type'         => $this->getType() ? $this->getType()->getName() : null,
             'name'         => $this->getName(),
             'city'         => $this->getCity(),
             'combinedName' => $this->getCombinedName(),

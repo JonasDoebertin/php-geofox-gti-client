@@ -55,7 +55,7 @@ class ServiceType
     public function toArray(): array
     {
         return [
-            'simpleType' => $this->getSimpleType(),
+            'simpleType' => $this->getSimpleType()->getName(),
             'shortInfo'  => $this->getShortInfo(),
             'longInfo'   => $this->getLongInfo(),
             'model'      => $this->getModel(),

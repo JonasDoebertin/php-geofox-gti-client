@@ -2,10 +2,11 @@
 
 namespace JdPowered\Geofox\Objects;
 
+use JdPowered\Geofox\Contracts\Arrayable;
 use JdPowered\Geofox\Data;
 use JdPowered\Geofox\Traits\MagicGettersSetters;
 
-class Departure
+class Departure implements Arrayable
 {
     use MagicGettersSetters;
 
@@ -84,6 +85,27 @@ class Departure
     }
 
     /**
+     * Get the instance as an array.
+     *
+     * @return array
+     */
+    public function toArray(): array
+    {
+        return [
+            'line'             => $this->getLine()->toArray(),
+            'timeOffset'       => $this->getTimeOffset(),
+            'station'          => $this->getStation()->toArray(),
+            'serviceId'        => $this->getServiceId(),
+            'platform'         => $this->getPlatform(),
+            'delay'            => $this->getDelay(),
+            'extra'            => $this->getExtra(),
+            'cancelled'        => $this->getCancelled(),
+            'realtimePlatform' => $this->getRealtimePlatform(),
+            'attributes'       => array_map(function (Attribute $attribute) { return $attribute->toArray(); }, $this->getAttributes()),
+        ];
+    }
+
+    /**
      * Get line.
      *
      * @return \JdPowered\Geofox\Objects\Service
@@ -132,9 +154,9 @@ class Departure
      *
      * @return \JdPowered\Geofox\Objects\SdName|null
      */
-    public function getStation(): ?SdName
+    public function getStation(): SdName
     {
-        return $this->station;
+        return $this->station ?? new SdName();
     }
 
     /**

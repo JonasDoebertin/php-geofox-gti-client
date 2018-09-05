@@ -2,10 +2,11 @@
 
 namespace JdPowered\Geofox\Objects;
 
+use JdPowered\Geofox\Contracts\Arrayable;
 use JdPowered\Geofox\Data;
 use JdPowered\Geofox\Traits\MagicGettersSetters;
 
-class FilterEntry
+class FilterEntry implements Arrayable
 {
     use MagicGettersSetters;
 
@@ -44,6 +45,21 @@ class FilterEntry
             ->setStationIds($data->stationIDs)
             ->setServiceName($data->serviceName)
             ->setLabel($data->label);
+    }
+
+    /**
+     * Get the instance as an array.
+     *
+     * @return array
+     */
+    public function toArray(): array
+    {
+        return [
+            'serviceId'   => $this->getServiceId(),
+            'stationIds'  => $this->getStationIds(),
+            'serviceName' => $this->getServiceName(),
+            'label'       => $this->getLabel(),
+        ];
     }
 
     /**
