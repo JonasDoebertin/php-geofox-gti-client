@@ -2,8 +2,6 @@
 
 namespace JdPowered\Geofox\Enum;
 
-use MabeEnum\Enum;
-
 class SegmentSelector extends Enum
 {
     const AFTER = 'AFTER';

@@ -2,9 +2,9 @@
 
 namespace JdPowered\Geofox\Enum;
 
-use MabeEnum\EnumSet;
+use MabeEnum\EnumSet as BaseSet;
 
-class Set extends EnumSet
+class Set extends BaseSet
 {
     /**
      * Convert a set to its array representation.

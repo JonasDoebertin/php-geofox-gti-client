@@ -2,8 +2,6 @@
 
 namespace JdPowered\Geofox\Enum;
 
-use MabeEnum\Enum;
-
 class VehicleType extends Enum
 {
     const A_BAHN = 'A_BAHN';

@@ -2,8 +2,6 @@
 
 namespace JdPowered\Geofox\Enum;
 
-use MabeEnum\Enum;
-
 class AnnouncementFilterPlannedType extends Enum
 {
     const NO_FILTER = 'NO_FILTER';

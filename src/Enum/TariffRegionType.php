@@ -2,8 +2,6 @@
 
 namespace JdPowered\Geofox\Enum;
 
-use MabeEnum\Enum;
-
 class TariffRegionType extends Enum
 {
     const COUNTRY = 'COUNTRY';

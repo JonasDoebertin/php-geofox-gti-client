@@ -2,8 +2,6 @@
 
 namespace JdPowered\Geofox\Enum;
 
-use MabeEnum\Enum;
-
 class SdType extends Enum
 {
     const UNKNOWN = 'UNKNOWN';

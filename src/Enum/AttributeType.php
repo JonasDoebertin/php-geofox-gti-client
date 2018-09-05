@@ -2,8 +2,6 @@
 
 namespace JdPowered\Geofox\Enum;
 
-use MabeEnum\Enum;
-
 class AttributeType extends Enum
 {
     const ACCURATE = 'ACCURATE';

@@ -2,8 +2,6 @@
 
 namespace JdPowered\Geofox\Enum;
 
-use MabeEnum\Enum;
-
 class ReturnCode extends Enum
 {
     const OK = 'OK';

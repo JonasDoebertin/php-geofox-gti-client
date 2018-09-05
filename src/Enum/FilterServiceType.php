@@ -2,8 +2,6 @@
 
 namespace JdPowered\Geofox\Enum;
 
-use MabeEnum\Enum;
-
 class FilterServiceType extends Enum
 {
     const AKN = 'AKN';

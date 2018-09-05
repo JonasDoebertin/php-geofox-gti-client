@@ -2,8 +2,6 @@
 
 namespace JdPowered\Geofox\Enum;
 
-use MabeEnum\Enum;
-
 class CoordinateType extends Enum
 {
     const EPSG_4326 = 'EPSG_4326';
